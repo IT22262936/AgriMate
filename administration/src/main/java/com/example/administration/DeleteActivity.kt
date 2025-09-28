@@ -2,6 +2,7 @@ package com.example.administration
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -22,6 +23,13 @@ class DeleteActivity : AppCompatActivity() {
         enableEdgeToEdge()
         binding = ActivityDeleteBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        val backButton = findViewById<ImageView>(R.id.backImageButton2)
+        backButton.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
 
         binding.deleteScheduleButton.setOnClickListener {
             val paddyVariety = binding.deletePaddyVariety.text.toString()

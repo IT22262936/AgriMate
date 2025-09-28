@@ -2,6 +2,7 @@ package com.example.administration
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -21,6 +22,13 @@ class UpdateActivity : AppCompatActivity() {
         binding = ActivityUpdateBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val backButton = findViewById<ImageView>(R.id.backImageButton)
+        backButton.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+
         databaseReference = FirebaseDatabase.getInstance().getReference("Paddy Informations")
 
         binding.updateSheduleButton.setOnClickListener {
@@ -34,15 +42,12 @@ class UpdateActivity : AppCompatActivity() {
             val wateringDays = binding.updateWateringDays.text.toString()
                 .split(",")
                 .mapNotNull { it.trim().toIntOrNull() }
-
             val fertilizer1Day = binding.updateFertilizer1Day.text.toString().toIntOrNull()
             val fertilizer1Type = binding.updateFertilizer1Type.text.toString().takeIf { it.isNotEmpty() }
             val fertilizer1Amount = binding.updateFertilizer1Amount.text.toString().toDoubleOrNull()
-
             val fertilizer2Day = binding.updateFertilizer2Day.text.toString().toIntOrNull()
             val fertilizer2Type = binding.updateFertilizer2Type.text.toString().takeIf { it.isNotEmpty() }
             val fertilizer2Amount = binding.updateFertilizer2Amount.text.toString().toDoubleOrNull()
-
             val fertilizer3Day = binding.updateFertilizer3Day.text.toString().toIntOrNull()
             val fertilizer3Type = binding.updateFertilizer3Type.text.toString().takeIf { it.isNotEmpty() }
             val fertilizer3Amount = binding.updateFertilizer3Amount.text.toString().toDoubleOrNull()
@@ -82,19 +87,15 @@ class UpdateActivity : AppCompatActivity() {
 
         maturityDuration?.let { updateMap["maturityDuration"] = it }
         if (!wateringDays.isNullOrEmpty()) updateMap["wateringDays"] = wateringDays
-
         fertilizer1Day?.let { updateMap["fertilizer1Day"] = it }
         fertilizer1Type?.let { updateMap["fertilizer1Type"] = it }
         fertilizer1Amount?.let { updateMap["fertilizer1Amount"] = it }
-
         fertilizer2Day?.let { updateMap["fertilizer2Day"] = it }
         fertilizer2Type?.let { updateMap["fertilizer2Type"] = it }
         fertilizer2Amount?.let { updateMap["fertilizer2Amount"] = it }
-
         fertilizer3Day?.let { updateMap["fertilizer3Day"] = it }
         fertilizer3Type?.let { updateMap["fertilizer3Type"] = it }
         fertilizer3Amount?.let { updateMap["fertilizer3Amount"] = it }
-
         if (updateMap.isEmpty()) {
             Toast.makeText(this, "No Fields to Update", Toast.LENGTH_SHORT).show()
             return

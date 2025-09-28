@@ -24,13 +24,11 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
-
         binding.updateButton.setOnClickListener {
             val intent = Intent(this@MainActivity, UpdateActivity::class.java)
             startActivity(intent)
             finish()
         }
-
         binding.deleteButton.setOnClickListener {
             val intent = Intent(this@MainActivity, DeleteActivity::class.java)
             startActivity(intent)

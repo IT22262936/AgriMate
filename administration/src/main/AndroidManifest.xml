@@ -9,14 +9,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MADD_Assignment_1_App_Developmment">
         <activity
-            android:name=".DeleteActivity"
-            android:exported="false" />
-        <activity
-            android:name=".LoginActivity"
+            android:name=".SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -25,12 +21,18 @@
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="false"></activity>
+            android:exported="false"/>
         <activity
             android:name=".UploadActivity"
             android:exported="false" />
         <activity
             android:name=".UpdateActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DeleteActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LoginActivity"
             android:exported="false" />
     </application>
 

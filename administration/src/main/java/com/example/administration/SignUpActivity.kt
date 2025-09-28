@@ -59,7 +59,6 @@ class SignUpActivity : AppCompatActivity() {
                     Toast.makeText(this@SignUpActivity,"User Already Exists", Toast.LENGTH_SHORT).show()
                 }
             }
-
             override fun onCancelled(databaseError: DatabaseError) {
                 Toast.makeText(this@SignUpActivity,"Database Error: ${databaseError.message}", Toast.LENGTH_SHORT).show()
             }

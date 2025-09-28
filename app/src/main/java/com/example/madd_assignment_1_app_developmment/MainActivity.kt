@@ -28,7 +28,6 @@ class MainActivity : AppCompatActivity() {
 
         database = FirebaseDatabase.getInstance().getReference("Paddy Informations")
 
-        // Load Paddy Varieties from Admin DB
         database.addListenerForSingleValueEvent(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 paddyVarieties.clear()
@@ -49,7 +48,6 @@ class MainActivity : AppCompatActivity() {
             }
         })
 
-        // DatePicker for Planting Date
         binding.plantingDate.setOnClickListener {
             val calendar = Calendar.getInstance()
             DatePickerDialog(
@@ -64,7 +62,6 @@ class MainActivity : AppCompatActivity() {
             ).show()
         }
 
-        // Submit Button
         binding.submitButton.setOnClickListener {
             val selectedVariety = binding.selectPaddyVariety.selectedItem.toString()
             val plantingDate = binding.plantingDate.text.toString()
@@ -74,8 +71,6 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this, "Please fill all fields", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
-
-            // Save Farmer Data to Firebase
             val farmerData = FarmerPaddyData(selectedVariety, plantingDate, fieldSize)
             FirebaseDatabase.getInstance().getReference("FarmerPaddyData")
                 .push()

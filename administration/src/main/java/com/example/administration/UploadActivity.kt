@@ -2,6 +2,7 @@ package com.example.administration
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -20,10 +21,15 @@ class UploadActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-
         binding = ActivityUploadBinding.inflate(layoutInflater)
-
         setContentView(binding.root)
+
+        val backButton = findViewById<ImageView>(R.id.backImageButton3)
+        backButton.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
 
         binding.saveScheduleButton.setOnClickListener {
             val paddyVariety = binding.paddyVariety.text.toString()
@@ -42,8 +48,22 @@ class UploadActivity : AppCompatActivity() {
             val fertilizer3Amount = binding.fertilizer3Amount.text.toString().toDoubleOrNull()
 
             databaseReference = FirebaseDatabase.getInstance().getReference("Paddy Informations")
-            val paddyData = PaddyData(paddyVariety, maturityDuration, wateringDays, fertilizer1Day, fertilizer1Type, fertilizer1Amount, fertilizer2Day, fertilizer2Type, fertilizer2Amount, fertilizer3Day, fertilizer3Type, fertilizer3Amount)
-            databaseReference.child(paddyVariety).setValue(paddyData).addOnSuccessListener {
+            val paddyData = PaddyData(
+                paddyVariety,
+                maturityDuration,
+                wateringDays,
+                fertilizer1Day,
+                fertilizer1Type,
+                fertilizer1Amount,
+                fertilizer2Day,
+                fertilizer2Type,
+                fertilizer2Amount,
+                fertilizer3Day,
+                fertilizer3Type,
+                fertilizer3Amount)
+
+            databaseReference.child(paddyVariety).setValue(paddyData)
+                .addOnSuccessListener {
                 binding.paddyVariety.text.clear()
                 binding.maturityDuration.text.clear()
                 binding.wateringDays.text.clear()
@@ -56,12 +76,12 @@ class UploadActivity : AppCompatActivity() {
                 binding.fertilizer3Day.text.clear()
                 binding.fertilizer3Type.text.clear()
                 binding.fertilizer3Amount.text.clear()
-
                 Toast.makeText(this,"Save", Toast.LENGTH_SHORT).show()
                 val intent = Intent(this@UploadActivity, MainActivity::class.java)
                 startActivity(intent)
                 finish()
-            }.addOnFailureListener {
+            }
+                .addOnFailureListener {
                 Toast.makeText(this,"Failed", Toast.LENGTH_SHORT).show()
             }
         }

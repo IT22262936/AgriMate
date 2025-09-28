@@ -44,11 +44,11 @@ class SignUpActivity : AppCompatActivity() {
             startActivity(Intent(this@SignUpActivity, LoginActivity::class.java))
             finish()
         }
-
     }
 
     private fun signupUser(username: String, password: String){
         databaseReference.orderByChild("username").equalTo(username).addListenerForSingleValueEvent(object : ValueEventListener{
+
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 if(!dataSnapshot.exists()){
                     val id = databaseReference.push().key
