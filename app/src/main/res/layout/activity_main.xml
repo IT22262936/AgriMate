@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:elevation="5dp"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/agriMate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="96dp"
+        android:fontFamily="@font/lobstertwo_bold"
+        android:text="AgriMate"
+        android:textColor="@color/material_green"
+        android:textSize="48sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/paddyCare"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-medium"
+        android:text="Paddy Care"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/agriMate"
+        app:layout_constraintStart_toStartOf="@+id/agriMate"
+        app:layout_constraintTop_toBottomOf="@+id/agriMate" />
+
+    <!-- Scrollable Form -->
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="370dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/paddyCare">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Spinner
+                android:id="@+id/selectPaddyVariety"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:paddingLeft="10dp"
+                android:prompt="@string/select_paddy_variety_prompt" />
+
+            <EditText
+                android:id="@+id/plantingDate"
+                android:layout_width="340dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/edit_text_border"
+                android:backgroundTint="@color/white"
+                android:drawablePadding="15dp"
+                android:focusable="false"
+                android:hint="Planting Date"
+                android:paddingLeft="10dp"
+                android:textColorHint="@color/light_gray"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/fieldSize"
+                android:layout_width="340dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/edit_text_border"
+                android:backgroundTint="@color/white"
+                android:drawablePadding="15dp"
+                android:hint="Field Size (hectares)"
+                android:inputType="numberDecimal"
+                android:paddingLeft="10dp"
+                android:textColorHint="@color/light_gray"
+                android:textSize="14sp" />
+
+            <Button
+                android:id="@+id/submitButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="128dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="128dp"
+                android:background="@drawable/green_button"
+                android:fontFamily="sans-serif"
+                android:text="Submit"
+                android:textSize="20sp" />
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/viewAllPaddyDataButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/green_button"
+        android:fontFamily="sans-serif"
+        android:text="View All Paddy Data"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView2" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,49 @@
+{
+  "project_info": {
+    "project_number": "837053131655",
+    "firebase_url": "https://agrimate-dd625-default-rtdb.firebaseio.com",
+    "project_id": "agrimate-dd625",
+    "storage_bucket": "agrimate-dd625.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:837053131655:android:ea8016029a5a5da66c0122",
+        "android_client_info": {
+          "package_name": "com.example.administration"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC633ujNCDm2fDm78Nz6hFVPrkDj8FOy8c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:837053131655:android:6e79df5e6246d6dd6c0122",
+        "android_client_info": {
+          "package_name": "com.example.madd_assignment_1_app_developmment"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC633ujNCDm2fDm78Nz6hFVPrkDj8FOy8c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

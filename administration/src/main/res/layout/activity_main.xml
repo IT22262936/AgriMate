@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UploadActivity">
+
+    <TextView
+        android:id="@+id/agriMate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="96dp"
+        android:fontFamily="@font/lobstertwo_bold"
+        android:text="AgriMate"
+        android:textColor="@color/material_green"
+        android:textSize="48sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/paddyCare"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-medium"
+        android:text="Paddy Care"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/agriMate"
+        app:layout_constraintHorizontal_bias="0.448"
+        app:layout_constraintStart_toStartOf="@+id/agriMate"
+        app:layout_constraintTop_toBottomOf="@+id/agriMate" />
+
+    <TextView
+        android:id="@+id/managePaddyDetailTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="Manage Paddy Details"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="@+id/paddyCare"
+        app:layout_constraintStart_toStartOf="@+id/paddyCare"
+        app:layout_constraintTop_toBottomOf="@+id/paddyCare" />
+
+    <Button
+        android:id="@+id/uploadButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="75dp"
+        android:background="@drawable/green_button"
+        android:text="Upload"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/managePaddyDetailTitle"
+        app:layout_constraintStart_toStartOf="@+id/managePaddyDetailTitle"
+        app:layout_constraintTop_toBottomOf="@+id/managePaddyDetailTitle" />
+
+    <Button
+        android:id="@+id/updateButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/green_button"
+        android:text="Update"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/uploadButton"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="@+id/uploadButton"
+        app:layout_constraintTop_toBottomOf="@+id/uploadButton" />
+
+    <Button
+        android:id="@+id/deleteButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/green_button"
+        android:text="Delete"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/updateButton"
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintStart_toStartOf="@+id/updateButton"
+        app:layout_constraintTop_toBottomOf="@+id/updateButton" />
+</androidx.constraintlayout.widget.ConstraintLayout>

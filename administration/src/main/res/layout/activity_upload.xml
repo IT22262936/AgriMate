@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UploadActivity">
+
+    <!-- Header -->
+    <TextView
+        android:id="@+id/agriMate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/lobstertwo_bold"
+        android:text="AgriMate"
+        android:textColor="@color/material_green"
+        android:textSize="48sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/paddyCare"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-medium"
+        android:text="Paddy Care"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@+id/agriMate"
+        app:layout_constraintStart_toStartOf="@+id/agriMate"
+        app:layout_constraintEnd_toEndOf="@+id/agriMate" />
+
+    <TextView
+        android:id="@+id/paddyVarietyTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="Upload Variety"
+        android:textSize="24sp"
+        app:layout_constraintTop_toBottomOf="@+id/paddyCare"
+        app:layout_constraintStart_toStartOf="@+id/paddyCare"
+        app:layout_constraintEnd_toEndOf="@+id/paddyCare" />
+
+    <!-- Scrollable Form -->
+    <ScrollView
+        android:layout_width="370dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/paddyVarietyTitle">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Basic Details -->
+            <EditText
+                android:id="@+id/paddyVariety"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:fontFamily="sans-serif-medium"
+                android:hint="Paddy Variety Name"
+                android:paddingLeft="10dp" />
+
+            <EditText
+                android:id="@+id/maturityDuration"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:fontFamily="sans-serif-medium"
+                android:hint="Maturity Duration (days)"
+                android:inputType="number"
+                android:paddingLeft="10dp" />
+
+            <!-- Watering Schedule -->
+            <EditText
+                android:id="@+id/wateringDays"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:fontFamily="sans-serif-medium"
+                android:hint="Watering Days (comma separated, e.g. 10,25,40)"
+                android:paddingLeft="10dp" />
+
+            <!-- Fertilizer 1 -->
+            <EditText
+                android:id="@+id/fertilizer1Day"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:fontFamily="sans-serif-medium"
+                android:hint="Fertilizer 1 Day After Planting"
+                android:inputType="number"
+                android:paddingLeft="10dp" />
+
+            <EditText
+                android:id="@+id/fertilizer1Type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:fontFamily="sans-serif-medium"
+                android:hint="Fertilizer 1 Type"
+                android:paddingLeft="10dp" />
+
+            <EditText
+                android:id="@+id/fertilizer1Amount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:fontFamily="sans-serif-medium"
+                android:hint="Fertilizer 1 Amount per Hectare"
+                android:paddingLeft="10dp" />
+
+            <!-- Fertilizer 2 -->
+            <EditText
+                android:id="@+id/fertilizer2Day"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:fontFamily="sans-serif-medium"
+                android:hint="Fertilizer 2 Day After Planting"
+                android:inputType="number"
+                android:paddingLeft="10dp" />
+
+            <EditText
+                android:id="@+id/fertilizer2Type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:fontFamily="sans-serif-medium"
+                android:hint="Fertilizer 2 Type"
+                android:paddingLeft="10dp" />
+
+            <EditText
+                android:id="@+id/fertilizer2Amount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:fontFamily="sans-serif-medium"
+                android:hint="Fertilizer 2 Amount per Hectare"
+                android:paddingLeft="10dp" />
+
+            <!-- Fertilizer 3 -->
+            <EditText
+                android:id="@+id/fertilizer3Day"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:fontFamily="sans-serif-medium"
+                android:hint="Fertilizer 3 Day After Planting"
+                android:inputType="number"
+                android:paddingLeft="10dp" />
+
+            <EditText
+                android:id="@+id/fertilizer3Type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:fontFamily="sans-serif-medium"
+                android:hint="Fertilizer 3 Type"
+                android:paddingLeft="10dp" />
+
+            <EditText
+                android:id="@+id/fertilizer3Amount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:fontFamily="sans-serif-medium"
+                android:hint="Fertilizer 3 Amount per Hectare"
+                android:paddingLeft="10dp" />
+
+            <Button
+                android:id="@+id/saveScheduleButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="130dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="sans-serif-medium"
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="10dp"
+                android:text="Save Schedule" />
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
