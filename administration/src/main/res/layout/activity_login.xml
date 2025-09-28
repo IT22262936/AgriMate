@@ -11,7 +11,7 @@
         android:id="@+id/AgriMate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="96dp"
+        android:layout_marginTop="120dp"
         android:fontFamily="@font/lobstertwo_bold"
         android:text="AgriMate"
         android:textColor="@color/material_green"

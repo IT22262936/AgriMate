@@ -13,6 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
+        android:backgroundTint="@color/white"
         app:layout_constraintBottom_toBottomOf="@+id/agriMate"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/agriMate"
@@ -22,7 +23,7 @@
         android:id="@+id/agriMate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="120dp"
         android:fontFamily="@font/lobstertwo_bold"
         android:text="AgriMate"
         android:textColor="@color/material_green"
@@ -44,12 +45,12 @@
         app:layout_constraintEnd_toEndOf="@+id/agriMate" />
 
     <TextView
-        android:id="@+id/paddyVarietyTitle"
+        android:id="@+id/deletePaddyVarietyTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:fontFamily="sans-serif-medium"
-        android:text="Upload Variety"
+        android:text="Delete Variety"
         android:textSize="24sp"
         app:layout_constraintTop_toBottomOf="@+id/paddyCare"
         app:layout_constraintStart_toStartOf="@+id/paddyCare"
@@ -60,11 +61,11 @@
         android:layout_width="370dp"
         android:layout_height="0dp"
         android:layout_marginTop="32dp"
-        android:layout_marginBottom="32dp"
+        android:layout_marginBottom="60dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/paddyVarietyTitle">
+        app:layout_constraintTop_toBottomOf="@+id/deletePaddyVarietyTitle">
 
 
         <LinearLayout
